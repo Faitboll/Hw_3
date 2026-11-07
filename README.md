@@ -27,10 +27,10 @@ cp .env.example .env
 
 ## Запуск
 
-### Один контейнер (4 балла)
+### Один контейнер
 ```sh
 docker build -t counter-app ./app
-docker run -d --name counter -p 8080:8000 -e GREETING="Hello, Docker!" -e DATA_FILE=/tmp/counter.db counter-app
+docker run -d --name counter -p 8080:8000 -e GREETING="Hello, bobrik!" -e DATA_FILE=/tmp/counter.db counter-app
 
 curl -fsS http://localhost:8080/
 curl -fsS -X POST http://localhost:8080/increment
@@ -38,7 +38,7 @@ docker logs counter
 docker rm -f counter
 ```
 
-### Docker Compose (6-10 баллов)
+### Docker Compose
 ```sh
 # запуск со сборкой образа
 docker compose up -d --build
@@ -50,7 +50,7 @@ docker compose down
 docker compose down -v
 ```
 
-### Скрипт проверки (10 баллов)
+### Скрипт проверки
 ```sh
 ./scripts/check.sh
 ```
